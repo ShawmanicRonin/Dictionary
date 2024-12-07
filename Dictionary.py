@@ -13,7 +13,7 @@ class DictionaryClass:
             Word = str.lower(input("What word would you like to define?\n\n\n>>"))
             DictionaryEntry = DictionaryClass.DictionaryVar.get(Word)
             if Word in DictionaryClass.DictionaryVar.keys:
-                return DictionaryEntry.capitalize
+                print(DictionaryEntry.capitalize)
         except:
             ErrorMessage
 
