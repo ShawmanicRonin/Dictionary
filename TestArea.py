@@ -17,7 +17,7 @@
 #             return key
 #     return None
 
-my_dict = {"apple": 1, "banana": 2, "cherry": 3}
+# my_dict = {"apple": 1, "banana": 2, "cherry": 3}
 
 # value_to_search = 2
 # result = search_key_by_value(my_dict, value_to_search)
@@ -78,14 +78,16 @@ def search():
     #def PrintInfo(KeyInput):
 
     InvalChars = ('0','1','2','3','4','5','6','7','8','9')
+    InvalCharsStr = ''.join(InvalChars)
     NoDef = f'No definition found.\n\nPerhapse the archives are incomplete?'
     KeyInput = input("What word would you like to define?\n\n\n>>")
     Word = KeyInput.lower()
     CapWord = Word.capitalize()
-    for Chars in KeyInput:
-        if Chars in KeyInput:
-            raise TypeError('No numbers are accepted')
-        elif InvalChars.__str__ not in KeyInput:
+    for i in KeyInput:
+        if InvalCharsStr in KeyInput:
+            print('I work')
+            #raise TypeError(f'{KeyInput} is not accepted.')
+        elif InvalCharsStr not in KeyInput:
             if Word.lower() == 'house':
                 print('\n\n\n\n\nHouse\n\nThis is not for you.\n\n')
             elif Word in DictionaryVar:
