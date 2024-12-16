@@ -24,6 +24,7 @@ class DictionaryClass:
         except:
             ErrorMessage
 
+#TODO create a function that allows the user to edit the dictionary contents
     def AppendDict():
         try:
             NewWord = str(input('What word would you like to define?\n\n\n>>'))

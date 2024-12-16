@@ -1,0 +1,1 @@
+Dictionary = {"father" : "no, \"I\" am your father!", 'a':'I work'}

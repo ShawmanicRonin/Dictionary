@@ -74,25 +74,74 @@ ErrorMessage = 'I don\'t work.'
 #     Search()
 # Search()
 
-def search():
-    #def PrintInfo(KeyInput):
+# def search():
+#     #def PrintInfo(KeyInput):
 
-    InvalChars = ('0','1','2','3','4','5','6','7','8','9')
-    InvalCharsStr = ''.join(InvalChars)
+#     InvalChars = ('0','1','2','3','4','5','6','7','8','9')
+#     InvalCharsStr = ''.join(InvalChars)
+#     NoDef = f'No definition found.\n\nPerhapse the archives are incomplete?'
+#     KeyInput = input("What word would you like to define?\n\n\n>>")
+#     Word = KeyInput.lower()
+#     CapWord = Word.capitalize()
+#     for i in KeyInput:
+#         if InvalCharsStr in KeyInput:
+#             print('I work')
+#             #raise TypeError(f'{KeyInput} is not accepted.')
+#         elif InvalCharsStr not in KeyInput:
+#             if Word.lower() == 'house':
+#                 print('\n\n\n\n\nHouse\n\nThis is not for you.\n\n')
+#             elif Word in DictionaryVar:
+#                 DefVal = DictionaryVar.get(Word, NoDef)
+#                 Def = DefVal.capitalize()
+#                 print(f'\nThe definition of \"{CapWord}\" is...\n\n{Def}\n\n\n\n')
+#     search()
+# search()
+
+# dictionary = {"father" : "no, \"I\" am your father!", 'a':'I work'}
+
+# def search_dict(dictionary, search_string):
+#   if not search_string.isalpha():
+#     raise ValueError("Search string should not contain number characters.")
+#     return {k: v for k, v in dictionary.items() if search_string in k}
+
+
+# def Search():
+#     try:
+#         NoDef = f'No definition found.\n\nPerhapse the archives are incomplete?'
+#         KeyInput = input("What word would you like to define?\n\n\n>>")
+#         AlphaCheck = KeyInput.isalpha()
+#         #try:
+#         if AlphaCheck is True:
+#             Word = KeyInput.lower()
+#             CapWord = Word.capitalize()
+#             if Word.lower() == 'house':
+#                 print('\n\n\n\n\nHouse\n\nThis is not for you.\n\n')
+#             elif Word in DictionaryVar:
+#                 DefVal = DictionaryVar.get(Word, NoDef)
+#                 Def = DefVal.capitalize()
+#                 print(f'\nThe definition of \"{CapWord}\" is...\n\n{Def}\n\n\n\n')
+#         #except ValueError('Please do not input intigers or floats.'):
+#             #Search()
+#     except Exception:
+#         Search()
+
+def Search():
     NoDef = f'No definition found.\n\nPerhapse the archives are incomplete?'
     KeyInput = input("What word would you like to define?\n\n\n>>")
-    Word = KeyInput.lower()
-    CapWord = Word.capitalize()
-    for i in KeyInput:
-        if InvalCharsStr in KeyInput:
-            print('I work')
-            #raise TypeError(f'{KeyInput} is not accepted.')
-        elif InvalCharsStr not in KeyInput:
-            if Word.lower() == 'house':
+    try:
+        if KeyInput.isalpha() is True:
+            Word = KeyInput.lower()
+            CapWord = Word.capitalize()
+    except:
+        raise ValueError('Please do not input intigers or floats.')
+    else:
+        if Word.lower() == 'house':
                 print('\n\n\n\n\nHouse\n\nThis is not for you.\n\n')
-            elif Word in DictionaryVar:
+        elif Word in DictionaryVar:
                 DefVal = DictionaryVar.get(Word, NoDef)
                 Def = DefVal.capitalize()
                 print(f'\nThe definition of \"{CapWord}\" is...\n\n{Def}\n\n\n\n')
-    search()
-search()
+    finally:
+         Menu()
+
+Search()
