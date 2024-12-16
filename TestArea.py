@@ -142,6 +142,6 @@ def Search():
                 Def = DefVal.capitalize()
                 print(f'\nThe definition of \"{CapWord}\" is...\n\n{Def}\n\n\n\n')
     finally:
-         Menu()
+         pass
 
 Search()
