@@ -44,7 +44,9 @@ def Search():
     translator = str.maketrans("", "", string.digits)
     Word = KeyInput.translate(translator)
     try:
-        if Word == '' or '.':
+        if Word == '':
+            print('Please do not input intigers or floats.')
+        elif Word == '.':
             print('Please do not input intigers or floats.')
         else:
             Word = KeyInput.lower()
@@ -84,7 +86,9 @@ def AppendDict():
         NewWordInput = str(input('What word would you like to define?\n\n\n>>'))
         NewWordLower = NewWordInput.lower()
         NewWord = NewWordLower.translate(translator)
-        if NewWord == '' or '.':
+        if NewWord == '':
+            print('Please do not input intigers or floats.')
+        elif NewWord == '.':
             print('Please do not input intigers or floats.')
         else:
             NewDefInput = str(input(f'What is the definition of {NewWord}?\n\n\n>>'))
